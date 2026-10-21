@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "If you use this code or data, please cite the article below."
+title: "Code and data for: How reliable are masked-pretraining gains in label-scarce hyperspectral mapping? A controlled evaluation study"
+authors:
+  - family-names: "El Jarai"
+    given-names: "Safae"
+    affiliation: "ENSIAS, Mohammed V University in Rabat"
+  - family-names: "Elhassouny"
+    given-names: "Azeddine"
+    affiliation: "ENSIAS, Mohammed V University in Rabat"
+license: MIT
+repository-code: "https://github.com/safae-el/hsi-masked-pretraining-evaluation"
+version: "1.0-jars-submission"
+preferred-citation:
+  type: article
+  title: "How reliable are masked-pretraining gains in label-scarce hyperspectral mapping? A controlled evaluation study"
+  authors:
+    - family-names: "El Jarai"
+      given-names: "Safae"
+    - family-names: "Elhassouny"
+      given-names: "Azeddine"
+  journal: "Journal of Applied Remote Sensing"
+  status: submitted
+  year: 2026
