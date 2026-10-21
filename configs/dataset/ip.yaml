@@ -1,0 +1,7 @@
+name: ip
+cube_file: Indian_pines_corrected.mat
+gt_file: Indian_pines_gt.mat
+cube_key: indian_pines_corrected
+gt_key: indian_pines_gt
+num_classes: 16
+split: standard10   # standard10 | disjoint | budget5 | budget10 | budget20 | budget30

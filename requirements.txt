@@ -1,0 +1,8 @@
+# Python 3.12; install PyTorch 2.5.1 with CUDA 12.1 from https://pytorch.org first
+torch==2.5.1
+mamba_ssm==2.3.2.post1
+numpy
+scipy
+pandas
+matplotlib
+omegaconf

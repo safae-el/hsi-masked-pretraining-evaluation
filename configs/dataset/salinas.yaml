@@ -1,0 +1,7 @@
+name: salinas
+cube_file: Salinas_corrected.mat
+gt_file: Salinas_gt.mat
+cube_key: salinas_corrected
+gt_key: salinas_gt
+num_classes: 16
+split: standard10

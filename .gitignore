@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+*.pt
+*.pth
+*.ckpt
+*.mat
+*.log
+.ipynb_checkpoints/
+figures/
+tables/
+supplement/
+outputs/
+multirun/

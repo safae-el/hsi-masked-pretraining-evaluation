@@ -1,0 +1,16 @@
+mode: whole_scene          # whole_scene | tiles
+tile_size: 128
+batch_size: 1              # whole scene = 1; tiles can be 4-8
+epochs: 100
+lr: 3.0e-4
+weight_decay: 0.05
+warmup_epochs: 10
+grad_accum: 1
+amp_dtype: bfloat16
+grad_checkpoint: false
+class_weighted_loss: true
+weight_smooth: 1.0         # full inverse-frequency (WHISPERS formula)
+early_stop_patience: 0   # 0 = disabled; fixed-budget protocol
+eval_every: 5
+resume: false
+num_seeds: 1

@@ -1,0 +1,4 @@
+# [M2] Config for the ported WHISPERS model (fill when porting into models/patch_hmt.py)
+name: patch_hmt
+patch_size: 9
+embed_dim: 64

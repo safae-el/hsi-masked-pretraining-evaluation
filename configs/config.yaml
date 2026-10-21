@@ -1,0 +1,12 @@
+defaults:
+  - dataset: ip
+  - model: dense_hmt
+  - train: supervised
+  - _self_
+
+seed: 0
+data_root: ${oc.env:HOME}/hsi_data
+splits_dir: ${data_root}/splits
+results_csv: results/runs.csv
+run_dir: ${oc.env:HOME}/hsi_runs/${dataset.name}_${model.name}_seed${seed}
+device: cuda

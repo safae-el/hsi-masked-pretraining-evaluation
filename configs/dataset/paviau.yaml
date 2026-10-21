@@ -1,0 +1,7 @@
+name: paviau
+cube_file: PaviaU.mat
+gt_file: PaviaU_gt.mat
+cube_key: paviaU
+gt_key: paviaU_gt
+num_classes: 9
+split: standard10
