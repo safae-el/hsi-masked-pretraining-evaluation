@@ -5,9 +5,11 @@ authors:
   - family-names: "El Jarai"
     given-names: "Safae"
     affiliation: "ENSIAS, Mohammed V University in Rabat"
+    orcid: "https://orcid.org/0009-0004-5524-8078"
   - family-names: "Elhassouny"
     given-names: "Azeddine"
     affiliation: "ENSIAS, Mohammed V University in Rabat"
+    orcid: "https://orcid.org/0000-0002-3683-9575"
 license: MIT
 repository-code: "https://github.com/safae-el/hsi-masked-pretraining-evaluation"
 version: "1.0-jars-submission"
@@ -17,8 +19,10 @@ preferred-citation:
   authors:
     - family-names: "El Jarai"
       given-names: "Safae"
+      orcid: "https://orcid.org/0009-0004-5524-8078"
     - family-names: "Elhassouny"
       given-names: "Azeddine"
+      orcid: "https://orcid.org/0000-0002-3683-9575"
   journal: "Journal of Applied Remote Sensing"
   status: submitted
   year: 2026
