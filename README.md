@@ -1,14 +1,15 @@
-# How reliable are masked-pretraining gains in label-scarce hyperspectral mapping?
+# Reliable evaluation of masked pretraining in label-scarce hyperspectral classification
 
-Code, labeled-pixel splits, per-run results, and analysis scripts for
+Code, labelled-pixel splits, per-run results, and analysis scripts for
 
-> S. El Jarai and A. Elhassouny, "How reliable are masked-pretraining gains in label-scarce
-> hyperspectral mapping? A controlled evaluation study," manuscript submitted to the
-> *Journal of Applied Remote Sensing*, 2026.
+> S. El Jarai and A. Elhassouny, "Reliable Evaluation of Masked Pretraining in Label-Scarce
+> Hyperspectral Classification," manuscript submitted to *Remote Sensing Letters*, 2026.
 
-The study compares in-domain masked pretraining with scratch training at 2, 3, and 5 labeled
-pixels per class over 20 paired downstream seeds, with Indian Pines as the full controlled
-analysis and Pavia University as a replication with three pretraining checkpoints.
+The study quantifies how downstream seed count, baseline fine-tuning schedule, evaluation metric,
+and pretraining length affect the estimated benefit of in-domain masked pretraining at 2, 3, and 5
+labelled pixels per class, using 20 paired downstream seeds. Indian Pines is the full controlled
+analysis; Pavia University replicates the main comparison and seed analysis with three pretraining
+checkpoints.
 
 ## Repository contents
 
@@ -30,13 +31,13 @@ analysis and Pavia University as a replication with three pretraining checkpoint
 
 | File | Runs | Manuscript |
 |---|---|---|
-| `results/budgets.csv` | Indian Pines main 20-seed arms (scratch at ×0.1 and ×1.0, in-domain and multi-scene pretraining) | Secs. 3.1–3.5; Tables 3, 4, 5a, A1; Figs. 1–3 |
+| `results/budgets.csv` | Indian Pines main 20-seed arms (scratch at ×0.1 and ×1.0, in-domain and multi-scene pretraining) | Secs. 3.1–3.5; Tables 1–2; Figures 1–2 |
 | `results/ssl_phase0.csv` | Classifier-only probe | Sec. 3.6 |
-| `results/ssl_phase0b.csv` | Pretraining-seed replication (seed 99), 5 labels per class, downstream seeds 0–9 | Table 5b; Fig. 4 |
-| `results/ssl_phase0c.csv` | Compute-matched in-domain pretraining (seed 0); scratch on the common five-label test set | Sec. 3.5; Table 5b; Figs. 4–5 |
-| `results/ssl_phase0d.csv` | Compute-matched in-domain pretraining (seed 99) | Table 5b; Fig. 4 |
-| `results/ssl_pretrained_x1.csv` | In-domain pretraining fine-tuned with the default ×1.0 backbone multiplier | Sec. 3.2; Tables S3–S4 |
-| `results/ssl_paviau*.csv` | Pavia University: scratch and three pretraining checkpoints (written by three parallel workers) | Sec. 3.7; Table 6; Tables S8–S12 |
+| `results/ssl_phase0b.csv` | Pretraining-seed replication (seed 99), 5 labels per class, downstream seeds 0–9 | Sec. 3.5 |
+| `results/ssl_phase0c.csv` | Compute-matched in-domain pretraining (seed 0); scratch on the common five-label test set | Secs. 3.5–3.6 |
+| `results/ssl_phase0d.csv` | Compute-matched in-domain pretraining (seed 99) | Sec. 3.5 |
+| `results/ssl_pretrained_x1.csv` | In-domain pretraining fine-tuned with the default ×1.0 backbone multiplier (2×2 design) | Sec. 3.3 |
+| `results/ssl_paviau*.csv` | Pavia University: scratch and three pretraining checkpoints (written by three parallel workers) | Secs. 3.1, 3.2, 3.4; Table 1 |
 
 ## Reproducing the statistics, tables, and figures (no GPU needed)
 
@@ -48,9 +49,12 @@ python analysis/make_figures.py --budgets results/budgets.csv --common results/s
 python analysis/make_supplement.py --budgets results/budgets.csv --x1 results/ssl_pretrained_x1.csv --outdir supplement
 python analysis/pu_analysis.py results/ssl_paviau.csv results/ssl_paviau_w2.csv results/ssl_paviau_w3.csv
 python analysis/make_pavia_tables.py results tables
+python analysis/pu_avg_seed_sensitivity.py results/ssl_paviau.csv results/ssl_paviau_w2.csv results/ssl_paviau_w3.csv
 ```
 
-`make_figures.py` compares 65 reported values with the manuscript and stops if any differ.
+`make_figures.py` writes Figures 1 and 2 of the manuscript (`fig3_seed_sensitivity` and `fig2_decomposition`)
+and compares 65 values with those reported, stopping if any differ.
+`pu_avg_seed_sensitivity.py` gives the Pavia University seed-count and power columns of Table 1.
 All bootstrap and permutation analyses use fixed random-number seeds.
 
 ## Re-running the experiments

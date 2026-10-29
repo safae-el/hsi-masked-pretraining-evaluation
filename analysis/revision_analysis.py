@@ -1,4 +1,5 @@
-"""Reproduces every number added in the 19 Oct 2026 revision of the JARS SSL manuscript.
+"""Indian Pines analyses: robustness checks, other metrics, class-wise IoU, seed-count bootstrap and power,
+label equivalents, the preliminary backbone-multiplier exploration, and the 2x2 initialization-by-schedule control.
 
 Usage: python revision_analysis.py --budgets budgets.csv --common ssl_phase0c.csv --x1 ssl_pretrained_x1.csv
 Selection rules are the same as make_figures.py (explicit enc_lr_mult, keep-first duplicates,

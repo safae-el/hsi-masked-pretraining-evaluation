@@ -1,6 +1,7 @@
-"""Figures 1-5 for the JARS SSL paper (19 Oct revision: Fig. 3 uses bootstrap resampling).
+"""Figures 1-5 for the masked-pretraining evaluation study (Fig. 3 uses bootstrap resampling).
+In the Remote Sensing Letters manuscript, Fig. 3 here is Figure 1 and Fig. 2 here is Figure 2.
 
-JARS rules: text >= 8 pt, no transparency, grayscale-distinguishable, panel labels,
+Figure rules: text >= 8 pt, no transparency, grayscale-distinguishable, panel labels,
 widths 3.3125 in (single column) / 6.75 in (double column), PDF + 600 dpi PNG.
 
 Selection rules (they reproduce Tables 3 and 4 and Secs. 3.1-3.5 of the manuscript):
